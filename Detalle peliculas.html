@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamova</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Resetear márgenes y paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Hacer que html y body ocupen toda la altura de la ventana */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        /* Contenedor de la película */
+        .detalle-container {
+            text-align: center;
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            padding: 20px;
+            z-index: 3;
+        }
+
+        /* Imagen que ocupa todo el ancho de la pantalla sin espacios */
+        .imagen-wrapper {
+            position: relative;
+            width: 100%;
+            height: 300vh; /* La imagen ocupa el 100% de la altura de la pantalla */
+            overflow: hidden;
+        }
+
+        #detalle-imagen {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* Efecto de desvanecido */
+        .fade {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+            z-index: 2;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin: 20px 0;
+            z-index: 3;
+        }
+
+        /* Estilo mejorado del botón reproducir */
+        .btn-reproducir {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            padding: 15px 40px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+            margin-top: 20px;
+            letter-spacing: 1px;
+        }
+
+        .btn-reproducir:hover {
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.6);
+            transform: translateY(-5px);
+        }
+
+        /* Ajustar el diseño responsivo */
+        @media (max-width: 768px) {
+            .btn-reproducir {
+                padding: 12px 30px;
+                font-size: 12px;
+            }
+
+            h1 {
+                font-size: 21px;
+                font-weight: 300;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .imagen-wrapper {
+                height: 50vh;
+            }
+        }
+
+        /* Flecha hacia atrás */
+        .back-arrow {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-size: 22px;
+            color: white;
+            z-index: 4;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .back-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Estilo del iframe */
+        .video-container {
+            max-width: 100%;
+            width: 95%;
+            height: 0;
+            padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 1;
+            width: 98%;
+            height: 100%;
+            border: none;
+            border-radius: 5px; /* Esquinas redondeadas */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Flecha de regreso -->
+    <div class="back-arrow" onclick="window.location.href='index.html';">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+
+    <div class="imagen-wrapper">
+        <img id="detalle-imagen" src="" alt="Detalle imagen">
+        <div class="fade"></div>
+    </div>
+
+    <div class="detalle-container">
+        <h1 id="detalle-titulo">Título de la Película</h1>
+        <p id="detalle-descripcion">Descripción de la película aquí...</p>
+
+        <!-- Botón de reproducir -->
+    </div>
+
+    <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/1XCXYeFPgTfQwIUBF9BJOyLvUiCBwjFIk/preview" allow="autoplay"></iframe>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

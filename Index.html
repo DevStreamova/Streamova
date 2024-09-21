@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamova</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <style>
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black; /* Fondo negro */
+            display: flex;
+            flex-direction: column; /* Para alinear el icono y el loader verticalmente */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        .spinner {
+            border: 6px solid #ffffff; /* Borde blanco */
+            border-top: 6px solid transparent; /* Parte superior transparente */
+            border-radius: 50%;
+            width: 40px; /* Tamaño más pequeño */
+            height: 40px; /* Tamaño más pequeño */
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .loader img {
+            width: 160px; /* Tamaño del icono */
+            margin-bottom: 40px; /* Espacio entre el icono y el loader */
+        }
+        </style>
+        
+        <div id="loader" class="loader">
+            <img src="/S (1)_preview_rev_1.png" alt="Logo">
+            <div class="spinner"></div> <!-- Loader debajo del logo -->
+        </div>
+        
+
+    <!-- Menú de navegación -->
+<header>
+    <nav>
+        <div class="logo">
+            <img src="/S (1)_preview_rev_1.png" alt="">
+        </div>
+
+    </nav>
+    <div class="menu-container">
+        
+        <i id="menu-toggle" class="fa-solid fa-bars"></i>
+        <nav id="menu" class="hidden">
+            <ul>
+                <center><img style="width: 70px;" src="/S (1)_preview_rev_1.png" alt=""></center>
+                <li style="background-color: rgb(34, 34, 34);" class="active"><a href="#peliculas"> Inicio</a></li>
+
+                <li><a href="#peliculas">Películas</a></li>
+                <li><a href="#series">Series</a></li>
+                <li><a href="#animes">Animes</a></li>
+            </ul>
+        </nav>
+    </div>
+
+   
+</header>
+
+
+<section class="slider" id="inicio">
+    <!-- Slide de la serie YOU -->
+    <div class="slide" style="background-image: url('https://i.ytimg.com/vi/Rq60VlFed-E/maxresdefault.jpg');">
+    </div>
+    <!-- Slide de la serie Stranger Things -->
+    <div class="slide" style="background-image: url('https://image.tmdb.org/t/p/original/49WJfeN0moxb9IPfGn8AIqMGskD.jpg');">
+    </div>
+    <!-- Slide de la serie La Casa de Papel -->
+    <div class="slide" style="background-image: url('https://wallpapers.com/images/featured/la-casa-de-papel-segtwbhffwy01w82.jpg');">
+    </div>
+    <!-- Slide de la serie Dark -->
+    <div class="slide" style="background-image: url('https://dark.netflix.io/share/global.png');">
+    </div>
+    <!-- Slide de la serie Peaky Blinders -->
+    <div class="slide" style="background-image: url('https://wallpapers.com/images/hd/the-shelby-family-of-peaky-blinders-1vx091mjkqn323ua.jpg');">
+    </div>
+    <!-- Slide de la serie Bridgerton -->
+    <div class="slide" style="background-image: url('https://files.merca20.com/uploads/2024/02/bridgerton-temporada-3.jpg');">
+    </div>
+    <!-- Slide de la serie Black Mirror -->
+    <div class="slide" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Black_Mirror_logo.svg/1200px-Black_Mirror_logo.svg.png');">
+    </div>
+    <!-- Slide de la serie Cobra Kai -->
+    <div class="slide" style="background-image: url('https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABW5Egkc3RsOI_NGM3t8mGESpmI1syh5-fryuzxQ3KPcribV3xrFUZ5JD2hOGh3ahNkdDL7ziPMFm_7Bmm_BS_rAKG2qm8FdBM-BH.jpg?r=712');">
+    </div>
+    <!-- Slide de la serie The Umbrella Academy -->
+    <div class="slide" style="background-image: url('https://cdn.milenio.com/uploads/media/2024/08/05/the-umbrella-academy-regresa.jpg');">
+    </div>
+    <!-- Slide de la serie 1899 -->
+    <div class="slide" style="background-image: url('https://occ-0-116-114.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABQC39v-XgcsuuUfGGmmKM19UmgC_m6ajZxIF51ceA2DdpoLAYUAew21372va_vGwakTonm1PO3C6z8bAYcTbQ2MV39MbIgWIJct0og292rakURxD_4Wyy64BhS9DrcwGuTW7tQ.jpg?r=5de');">
+    </div>
+    <!-- Slide de la serie The Crown -->
+    <div class="slide" style="background-image: url('https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABRa2Ojolth_4mw7fNztaPZJHe6V0oyMCD-NF0By0ddFyNQRb7NdWoHl3BPwSXVS3dbgG-jeiIaKzqAxqcpR_BGOHghInV3iHy6pY.jpg?r=f43');">
+    </div>
+
+    <!-- Slide de la serie The Witcher -->
+    <div class="slide" style="background-image: url('https://images5.alphacoders.com/131/1319528.jpeg');">
+    </div>
+    
+    <!-- Slide de la serie The Mandalorian -->
+    <div class="slide" style="background-image: url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4826879538A92B52B2B316E2E9D5A1BEC5C774C094FF9F96E3265E0D4220E3E6/scale?width=1200&aspectRatio=1.78&format=webp');">
+    </div>
+
+    <!-- Slide de la serie Breaking Bad -->
+    <div class="slide" style="background-image: url('https://hipermediaciones.com/wp-content/uploads/2013/10/21225_breaking_bad.jpg?w=1000');">
+    </div>
+
+    <!-- Slide de la serie The Boys -->
+    <div class="slide" style="background-image: url('https://i.pinimg.com/originals/97/6c/9f/976c9f28572614f6975d1609f5590a28.jpg');">
+    </div>
+
+    <!-- Slide de la serie Vikings -->
+    <div class="slide" style="background-image: url('https://m.media-amazon.com/images/S/pv-target-images/dd88808363a7aff9d7dd474a29551568253e20223bb2ea1ed14a37ab9c3d6644.jpg');">
+    </div>
+
+    <!-- Slide de la serie The Walking Dead -->
+    <div class="slide" style="background-image: url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/933E0D6CAF547F41DEB8C66ECE2DC2B7246A6590FF25AEA936859FE934336EB5/scale?width=1200&aspectRatio=1.78&format=webp');">
+    </div>
+
+    <!-- Slide de la serie Game of Thrones -->
+    <div class="slide" style="background-image: url('https://static.hbo.com/game-of-thrones-1-1920x1080.jpg');">
+    </div>
+
+    <!-- Slide de la serie House of the Dragon -->
+    <div class="slide" style="background-image: url('https://static.hbo.com/2024-05/house-of-the-dragon-s2-ka-1920.jpg');">
+    </div>
+  
+    <!-- Slide de la serie Suits -->
+    <div class="slide" style="background-image: url('https://images8.alphacoders.com/109/1092259.jpg');">
+    </div>
+
+    <!-- Slide de la serie Lucifer -->
+    <div class="slide" style="background-image: url('https://c4.wallpaperflare.com/wallpaper/324/464/964/lucifer-wallpaper-preview.jpg');">
+    </div>
+
+    <!-- Slide de la serie Narcos -->
+    <div class="slide" style="background-image: url('https://fondosmil.co/fondo/74656.jpg');">
+    </div>
+
+    <!-- Slide de la serie The Expanse -->
+    <div class="slide" style="background-image: url('https://i.blogs.es/f8f790/the-expanse-season-4-expa_s4_keyart_poster_rgb/1366_2000.jpg');">
+    </div>
+
+    <!-- Slide de la serie Rick and Morty -->
+    <div class="slide" style="background-image: url('https://musewithmeblog.files.wordpress.com/2015/08/rickmortyfeatured.jpg?w=810');">
+    </div>
+
+    <!-- Slide de la serie Arrow -->
+    <div class="slide" style="background-image: url('https://m.media-amazon.com/images/S/pv-target-images/1aaffced2534c99e13bee220018d18fba73aee1bf4edc4f7829af7bc1797931f.jpg');">
+    </div>
+
+    <!-- Slide de la serie The Handmaid's Tale -->
+    <div class="slide" style="background-image: url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/CC0D07730FD93E78854EFCE1A1F8F15D1F588A088783440E30EB9A0A195F519E/scale?width=1200&aspectRatio=1.78&format=webp');">
+    </div>
+
+    <!-- Slide de la serie One Piece (Live Action) -->
+    <div class="slide" style="background-image: url('https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABUO5oZTgqdLOE1sKmWvGSyEsGDBAz39MZZMDCJ2cVKgTXD4k7r9A3H28AMVoVWVApEZtXIxWB7WoVPnuoRGHxkeYyFFK7wG1vgsg.jpg?r=7c0');">
+    </div>
+
+    <!-- Slide de la serie The Sandman -->
+    <div class="slide" style="background-image: url('https://daily.jstor.org/wp-content/uploads/2022/08/what_goes_on_in_the_gutter_of_neil_gaimans_the_sandman_1050x700.jpg');">
+    </div>
+
+    <!-- Slide de la serie Wednesday -->
+    <div class="slide" style="background-image: url('https://occ-0-8407-114.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABc5URtqG36cHmUzXPrn9qaN1prCdZB3Llrhe8w4fvPKUxMp1phgN738mP1ctTe9QshMH8f0NlK-GdSAZDYJpXtvofUffd8o4BQuB7AKZogG-KbG0kR5H5w9kp3pXbogjGHSN.jpg?r=082');">
+    </div>
+
+    <!-- Slide de la serie Shadow and Bone -->
+    <div class="slide" style="background-image: url('https://www.thebanner.org/sites/default/files/styles/article_detail_header/public/MM-609%20Shadow%20and%20Bone.jpg?itok=MjjJ7w4X');">
+    </div>
+
+    <!-- Slide de la serie The Night Agent -->
+    <div class="slide" style="background-image: url('https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRTyNqGN71jPGYh8ODB1hjlPg4ScqQfe_geHYoDI_OuZ1BViJUICKKs0OfX2fBsxoPoGcekinCuBswnaVOEtMm8Krfokj3qHbIvKEZ3IRU6cv47C1H0JHVR2_2FQlzOjgjB60A.webp?r=71f');">
+    </div>
+</section>
+
+<section id="populares">
+    <div class="peliculas-grid">
+        <a href="#" 
+           class="pelicula-link" 
+           data-type="series" 
+           data-title="You" 
+           data-desc="Un hombre encantador y muy peligroso toma medidas extremas para introducirse en la vida de las mujeres de las que se enamora."
+           data-img="https://resizing.flixster.com/g81COrwvWE7pqUEIVL0271ZsFT4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMjVhYWZjMGMtY2I4MS00ZWE2LWE5NTEtNTVlZDRjMDE3ZGU1LmpwZw==">
+            <div class="pelicula">
+                <img src="https://resizing.flixster.com/g81COrwvWE7pqUEIVL0271ZsFT4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMjVhYWZjMGMtY2I4MS00ZWE2LWE5NTEtNTVlZDRjMDE3ZGU1LmpwZw==" alt="You">
+            </div>
+        </a>
+
+        <a href="#" 
+           class="pelicula-link" 
+           data-type="series" 
+           data-title="Dark" 
+           data-desc="La desaparición de dos niños muestra los vínculos entre cuatro familias y expone el pasado de una pequeña ciudad."
+           data-img="https://m.media-amazon.com/images/M/MV5BOTk2NzUyOTctZDdlMS00MDJlLTgzNTEtNzQzYjFhNjA0YjBjXkEyXkFqcGdeQXVyMjg1NDcxNDE@._V1_FMjpg_UX1000_.jpg">
+            <div class="pelicula">
+                <img src="https://m.media-amazon.com/images/M/MV5BOTk2NzUyOTctZDdlMS00MDJlLTgzNTEtNzQzYjFhNjA0YjBjXkEyXkFqcGdeQXVyMjg1NDcxNDE@._V1_FMjpg_UX1000_.jpg" alt="Dark">
+            </div>
+        </a>
+
+        <a href="#" 
+           class="pelicula-link" 
+           data-type="peliculas" 
+           data-title="Real Steel" 
+           data-desc="Un promotor de boxeo y su hijo se unen de mala gana para construir y entrenar a un robot peleador que pelee por el campeonato."
+           data-img="https://m.media-amazon.com/images/S/pv-target-images/166d55f2c17d0948232d45e540b9c4784c0cf618f14d11fe1313cc3f50769310.png">
+            <div class="pelicula">
+                <img src="https://m.media-amazon.com/images/S/pv-target-images/166d55f2c17d0948232d45e540b9c4784c0cf618f14d11fe1313cc3f50769310.png" alt="Real Steel">
+            </div>
+        </a>
+    </div>
+</section>
+
+<style>
+    /* Ocultar el h1 y el p dentro de la sección de películas */
+.peliculas-grid .hidden {
+    display: none;
+}
+
+</style>
+
+  
+<script>
+    window.onload = function() {
+    const loader = document.getElementById('loader');
+    setTimeout(() => {
+        loader.style.display = 'none'; // Oculta el loader después de 10 segundos
+    }, 10000);
+};
+
+</script>
+    <script src="script.js"></script>
+</body>
+</html>
